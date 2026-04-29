@@ -44,15 +44,15 @@ ip dhcp excluded-address 10.0.2.1 10.0.2.10
 ip dhcp excluded-address 10.0.3.1 10.0.3.10
 !
 ip dhcp pool vlan1
-   network 10.0.1.0 255.255.255.0
+   network 10.0.5.0 255.255.255.0
    default-router 10.0.1.1 
 !
 ip dhcp pool vlan2
-   network 10.0.2.0 255.255.255.0
+   network 10.0.6.0 255.255.255.0
    default-router 10.0.2.1 
 !
 ip dhcp pool vlan3
-   network 10.0.3.0 255.255.255.0
+   network 10.0.8.0 255.255.255.0
    default-router 10.0.3.1 
 !
 ip ips po max-events 100
@@ -79,7 +79,6 @@ interface FastEthernet4
 	speed auto
 	ip nat outside
 	ip access-group 103 in
-	no cdp enable
 	crypto ipsec client ezvpn ezvpnclient outside
 	crypto map static-map
 !
